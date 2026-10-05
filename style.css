@@ -1,0 +1,107 @@
+/* General Body & Typography Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styling with Red Accents */
+nav {
+    background-color: #1a1a1a;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #c0392b;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+/* Red Hover Effect for Navigation Links */
+nav a:hover {
+    color: #e74c3c;
+}
+
+/* Section Layout Styling */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+section h1, section h2 {
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+section p {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    color: #555555;
+}
+
+/* Image & Video Styling with Subtle Red Accent Shadow */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.15);
+    margin-top: 15px;
+    border: 2px solid #eaeaea;
+}
+
+/* HTML Table Styling with Red Header */
+table {
+    margin: 20px auto;
+    background: #ffffff;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+th {
+    background-color: #c0392b;
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f2f2;
+}
+
+/* Contact Section Styling */
+#contact {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+#contact h2, #contact p {
+    color: #ffffff;
+}
