@@ -3,63 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Tenique's Portfolio | IT & Creative Arts</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body> 
+<body>
 
     <!-- Navigation Menu -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home">
-        <h1>Welcome to my Personal Website</h1>
-        <p>Hello! I am a college student sharing my background, interests, and technical projects.</p>
+    
 
-        <!-- Image of Myself Profile Picture -->
-        <img src="images/my-photo.jpeg" alt="Profile Picture" width="310" height="240">
+    <!-- Home / Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to My Personal Portfolio</h1>
+            <p>IT Student, Web Designer, Hair Stylist, and a love for Photography.</p>
+            
+            <!-- Profile Image -->
+            <img src="images/my-photo.jpeg" alt="Tenique in school uniform" class="profile-img">
+        </div>
     </section>
 
-    <!-- IT About Section with Youtube Video -->
+    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Here is a quick video introduction and overview of my studies in Information Technology.</p>
+        <div class="card">
+            <p>I am a second-year college student currently pursuing my degree in Information Technology. My academic journey focuses on understanding datasystems, web design, computer graphics and database structures. Outside of technology, I express my creative side by running a hair styling side business and capturing the breathtaking colors of sunsets and the sky.</p>
+        </div>
 
-        <!-- Video Element -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="IT Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <!-- Video Integration (Local HTML5 Video) -->
+        <div class="video-container">
+            <h3>Inspiration: Calm Skies & Sunsets</h3>
+            <p>A look into the serene landscapes and colors that inspire my photography and creative work:</p>
+            <video width="100%" height="315" controls style="border-radius: 8px;">
+                <source src="sky-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    <!-- Creative Gallery Section (Multiple Hair Photos & Sky Photography) -->
+    <section id="gallery">
+        <h2>Creative Gallery</h2>
+        <p>A glimpse into my side ventures, hair styling artistry and my one of my favorite sky captures:</p>
+        
+        <div class="gallery-grid">
+            <!-- Hair Photo 1 -->
+            <div class="gallery-card">
+                <img src="images/hair-1.jpeg" alt="Hair styling creation by Tenique">
+                <h3>Custom Braids & Styling</h3>
+                <p>Detailed precision and clean sectioning.</p>
+            </div>
+
+            <!-- Hair Photo 2 -->
+            <div class="gallery-card">
+                <img src="images/hair-2.jpeg" alt="Hair styling look by Niquette">
+                <h3>Sleek & Smooth Finishes</h3>
+                <p>Bringing artistic styling visions to life.</p>
+            </div>
+
+            <!-- Hair Photo 3 -->
+            <div class="gallery-card">
+                <img src="images/hair-3.jpeg" alt="Hair styling side business work">
+                <h3>Protective Braided Styles</h3>
+                <p>Crafted with care during client sessions.</p>
+            </div>
+
+            <!-- Sky / Sunset Photo -->
+            <div class="gallery-card">
+                <img src="images/sky-photo.jpeg" alt="Sunset sky photography by Niquette">
+                <h3>Sky Captures & Beautiful Scenes</h3>
+                <p>Chasing warm hues and quiet twilight moments.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Portfolio & Skills Table Section -->
+    <!-- Portfolio & Skills Section -->
     <section id="portfolio">
-        <h2>Portfolio & Skills</h2>
-        <p>A summary of my current courses and skill proficiencies:</p>
-
+        <h2>IT Skills & Coursework</h2>
+        <p>A breakdown of my technical coursework and side ventures:</p>
+        
         <!-- HTML Table -->
-        <table border="1" cellpadding="10" cellspacing="0">
+        <table>
             <thead>
                 <tr>
                     <th>Category</th>
-                    <th>Topics / Skills</th>
-                    <th>Proficiency Level</th>
+                    <th>Description & Focus</th>
+                    <th>Proficiency / Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Web Design</td>
-                    <td>HTML5, External CSS, Layouts</td>
-                    <td>Advanced</td>
+                    <td>HTML5, External CSS Layouts</td>
+                    <td>Intermediate</td>
                 </tr>
                 <tr>
                     <td>Database Management</td>
-                    <td>Relational Tables, ERDs</td>
+                    <td>Relational Tables, ERDs, Data Models</td>
                     <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>Hair Styling Side Business</td>
+                    <td>Client Consultations, Precision Styling, Artistry</td>
+                    <td>Active Venture</td>
+                </tr>
+                <tr>
+                    <td>Sky & Sunset Photography</td>
+                    <td>Composition, Natural Lighting, Color Grading</td>
+                    <td>Personal Passion</td>
                 </tr>
             </tbody>
         </table>
@@ -67,9 +126,18 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Get in touch with me via school email or check out my GitHub profile!</p>
+        <h2>Contact Me</h2>
+        <p>Have questions, want to collaborate on an IT project, or book a hair styling session? Reach out below!</p>
+        <div class="contact-btns">
+            <a href="mailto:TeniqueP6823@TAMCC.EDU.GD" class="btn">Email Me</a>
+            <a href="https://github.com/niquetee101" target="_blank" class="btn">GitHub Profile</a>
+        </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Tenique. Built with HTML & CSS for IT Portfolio Assignment.</p>
+    </footer>
 
 </body>
 </html>
