@@ -11,7 +11,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(43, 45, 66, 0.75), rgba(43, 45, 66, 0.75)), url('images/Background.jpg');
+    background: linear-gradient(rgba(43, 45, 66, 0.75), rgba(43, 45, 66, 0.75)), url('../images/Background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -19,13 +19,16 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.8;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Navigation Menu */
 nav {
     background-color: var(--sky-dark);
-    padding: 15px 0;
-    text-align: center;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -34,13 +37,10 @@ nav {
 
 nav ul {
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 18px;
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
@@ -52,6 +52,21 @@ nav a {
 }
 
 nav a:hover {
+    color: var(--sunset-peach);
+}
+
+/* Hamburger Button (Hidden on Desktop) */
+#hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#hamburger-btn:hover {
     color: var(--sunset-peach);
 }
 
@@ -162,51 +177,6 @@ section p {
     color: var(--text-muted);
 }
 
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================================
-   Responsive Design for Mobile Devices
-   ========================================== */
-@media (max-width: 768px) {
-    /* Stack navigation menu vertically */
-    nav li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    /* Adjust padding and spacing for smaller viewports */
-    section {
-        padding: 40px 15px;
-    }
-
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-
-    /* Make contact buttons stack nicely on phones */
-    .contact-btns {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-    }
-
-    .btn {
-        margin: 0;
-        width: 80%;
-    }
-
-    /* Add horizontal scrolling for the skills table on small screens */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-}
 /* Skills Table */
 table {
     width: 100%;
@@ -237,7 +207,7 @@ tr:not(:last-child) td {
     border-bottom: 1px solid #f0eae1;
 }
 
-/* Contact Buttons */
+/* Contact Buttons & General Buttons */
 .contact-btns {
     margin-top: 25px;
 }
@@ -248,6 +218,7 @@ tr:not(:last-child) td {
     color: #ffffff;
     padding: 12px 25px;
     border-radius: 25px;
+    border: none;
     text-decoration: none;
     font-weight: 600;
     margin: 0 10px;
@@ -267,6 +238,102 @@ footer {
     text-align: center;
     padding: 25px 0;
     font-size: 0.9rem;
+}
 
-    
+/* ==========================================
+   Responsive Design for Mobile Devices
+   ========================================== */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    #hamburger-btn {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        gap: 12px;
+        order: 3;
+    }
+
+    nav ul.show-menu {
+        display: flex;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .contact-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .contact-btns .btn {
+        margin: 0;
+        width: 80%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* ==========================================
+   Dark Mode Theme Support (Sunset Twilight)
+   ========================================== */
+body.dark-mode {
+    background: linear-gradient(rgba(18, 19, 28, 0.85), rgba(18, 19, 28, 0.85)), url('../images/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    --text-main: #f0f0f0;
+    --text-muted: #b0b0b0;
+    --card-bg: #1e2029;
+}
+
+body.dark-mode .hero-section {
+    background: linear-gradient(135deg, #1e2029 0%, #2b2d42 100%);
+}
+
+body.dark-mode .hero-section h1,
+body.dark-mode section h2,
+body.dark-mode .gallery-card h3,
+body.dark-mode .card h3 {
+    color: var(--sunset-peach) !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .video-container,
+body.dark-mode .gallery-card,
+body.dark-mode table {
+    background: var(--card-bg);
+    border-color: #2e3244;
+}
+
+body.dark-mode tr:nth-child(even) {
+    background-color: #252836;
+}
+
+body.dark-mode th {
+    background-color: var(--sky-dark);
 }
